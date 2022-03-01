@@ -84,7 +84,7 @@ plot(dados_modelagem$area_basal.BA., dados_modelagem$ab_est)
 #separando as colunas x e y para executar a funcao step
 step_bio <- dados_modelagem%>%dplyr::select(c(8,9:26))
 View(step_bio)
-write.csv2(step_bio, "Item_4_Tabelas/step_bio.csv")
+
 #aplicando a regressao e o step
 independentes_bio<-lm(biomassa.kg.~., data=step_bio)
 
