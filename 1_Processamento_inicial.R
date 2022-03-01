@@ -1,5 +1,5 @@
 ##################################################################################
-# 02/02/2022
+# 01/03/2022
 # SCRIPT 1 - PROCESSAMENTO INICIAL
 # LIVRO: APLICACOES DO LIDAR PARA O INVENTARIO FLORESTAL - ENFOQUE UNIDADE DE AREA
 # AUTORES: DALLA CORTE, ET AL. 2022
@@ -16,7 +16,7 @@
 # Limpando a memoria do RStudio
 rm(list = ls())
 
-#Verificando o diretório
+#Verificando o diretÃ³rio
 getwd()
 
 # Direcionando para local especifico no computador
@@ -47,7 +47,7 @@ write.csv2(head, "Item_5_Tabelas/head.csv")
 las_check(dadosLAS, print = TRUE)
 
 #Histograma de valores de Z
-hist(dadosLAS@data$Z, col = height.colors(19),  main = "Histograma (Z)", xlab = "Variação das elevações (m)",  ylab = "Frequência") 
+hist(dadosLAS@data$Z, col = height.colors(19),  main = "Histograma (Z)", xlab = "VariaÃ§Ã£o das elevaÃ§Ãµes (m)",  ylab = "FrequÃªncia") 
 
 #Parametros espaciais
 print(dadosLAS)
@@ -100,7 +100,7 @@ jpeg("C:/Livro_Lidar/Item5_preliminar/Item_5_Imagens/DSM_dados.jpeg", width = 77
 plot(DSM_dados, main = 'DSM (m)')
 dev.off()
 
-#normalização da nuvem de pontos
+#normalizaÃ§Ã£o da nuvem de pontos
 las_norm <- normalize_height(dados_solo, tin())
 plot(las_norm, bg = "white")
 
