@@ -7,7 +7,7 @@
 # CURSO DE ENGENHARIA FLORESTAL
 ##################################################################################
 #Definindo do diretório
-setwd("C:/Livro_Lidar/Item6_Metricas/")
+setwd("C:/Livro_Lidar/Item2_Metricas/")
 
 ##################################################################################
 ############### GERACAO DAS METRICAS PARA O INVENTARIO FLORESTAL #################
@@ -17,11 +17,11 @@ install.packages("lidR")
 require(lidR)
 
 # Abrindo e inspecionando as nuvens de pontos
-dadosLAS_norm<-readLAS("C:/Livro_Lidar/Item6_Metricas/Item_6_Dados_Lidar/las_normalizada.las")
+dadosLAS_norm<-readLAS("C:/Livro_Lidar/Item2_Metricas/Item_2_Dados_Lidar/las_normalizada.las")
 
 #Recorte da nuvem para area de interesse - unidade amostral
 #Opção 1 - recorte com arquivo shapefile
-parcela<- shapefile("C:/Livro_Lidar/Item6_Metricas/Item_6_shapefile/ua.shp")
+parcela<- shapefile("C:/Livro_Lidar/Item2_Metricas/Item_2_shapefile/ua.shp")
 ua1<-clip_roi(dadosLAS_norm, parcela)
 plot(ua1)
 
@@ -37,7 +37,6 @@ metrics
 metrics_ua<-cloud_metrics(ua2, .stdmetrics_z)
 
 #Salvando a tabela de dados "cloud metrics"
-tabela<- write.csv2(metrics_ua,"Item_6_Tabelas/test.csv")
-tabela<-read.csv2("Item_6_Tabelas/test.csv2")
+tabela<- write.csv2(metrics_ua,"Item_2_Tabelas/test.csv")
+tabela<-read.csv2("Item_2_Tabelas/test.csv2")
 View(tabela)
-
