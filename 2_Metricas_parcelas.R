@@ -1,12 +1,12 @@
 ##################################################################################
-# 02/02/2022
+# 01/03/2022
 # SCRIPT 2
 # LIVRO: APLICACOES DO LIDAR PARA O INVENTARIO FLORESTAL - ENFOQUE UNIDADE DE AREA
 # AUTORES: DALLA CORTE, ET AL. 2022
 # UNIVERSIDADE FEDERAL DO PARANA - UFPR
 # CURSO DE ENGENHARIA FLORESTAL
 ##################################################################################
-#Definindo do diretório
+#Definindo do diretÃ³rio
 setwd("C://Livro_Lidar/Item6_Metricas/")
 
 ##################################################################################
@@ -20,12 +20,12 @@ require(lidR)
 dadosLAS_norm<-readLAS("C:/Livro_Lidar/Item6_Metricas/Item_6_Dados_Lidar/las_normalizada.las")
 
 #Recorte da nuvem para area de interesse - unidade amostral
-#Opção 1 - recorte com arquivo shapefile
+#OpÃ§Ã£o 1 - recorte com arquivo shapefile
 parcela<- shapefile("C:/Livro_Lidar/Item6_Metricas/Item_6_shapefile/ua.shp")
 ua1<-clip_roi(dadosLAS_norm, parcela)
 plot(ua1)
 
-#Opção 2 - recorte com ponto central da parcela e raio
+#OpÃ§Ã£o 2 - recorte com ponto central da parcela e raio
 ua2 = clip_circle(dadosLAS_norm, 558800, 7306500, 13.82)
 plot(ua2)
 
