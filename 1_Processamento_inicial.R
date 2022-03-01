@@ -20,7 +20,7 @@ rm(list = ls())
 getwd()
 
 # Direcionando para local especifico no computador
-setwd("C://Livro_Lidar/Item1_preliminar/") 
+setwd("C:/Livro_Lidar/Item1_preliminar/") 
 
 # Instalando os pacotes necessarios e carregando os mesmos
 install.packages("lidR")
@@ -79,7 +79,7 @@ p1<- c(558700,7306200)
 p2<- c(558850,7306500)
 
 las=dados_solo
-jpeg("C://Livro_Lidar//Item1_preliminar//Item_1_Imagens/crossection.jpeg", width = 770, height = 350, units = "px", res = 150, quality = 5000)
+jpeg("C:/Livro_Lidar/Item1_preliminar/Item_1_Imagens/crossection.jpeg", width = 770, height = 350, units = "px", res = 150, quality = 5000)
 plot_crossection(dados_solo, p1=p1, p2=p2, colour_by= factor(Classification))
 dev.off()
 
@@ -105,7 +105,7 @@ las_norm <- normalize_height(dados_solo, tin())
 plot(las_norm, bg = "white")
 
 #Salvando a nuvem normalizada
-writeLAS(las_norm, "C://Livro_Lidar//Item1_preliminar//Item_1_Dados_Lidar/las_normalizada.las")
+writeLAS(las_norm, "C:/Livro_Lidar/Item1_preliminar/Item_1_Dados_Lidar/las_normalizada.las")
 
 #CHM (Canopy Height Model)
 CHM_dados <- grid_canopy(las_norm, 1, p2r())
@@ -113,5 +113,3 @@ CHM_dados <- grid_canopy(las_norm, 1, p2r())
 jpeg("C:/Livro_Lidar/Item1_preliminar/Item_1_Imagens/CHM_dados.jpeg", width = 770, height = 990, units = "px", res = 150, quality = 5000)
 plot(CHM_dados, col=height.colors(30), main = 'CHM (m)')
 dev.off()
-
-
