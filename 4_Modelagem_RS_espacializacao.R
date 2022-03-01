@@ -1,7 +1,8 @@
 ##################################################################################
+# 01/03/2022
 # SCRIPT 4
 # LIVRO: APLICACOES DO LIDAR PARA O INVENTARIO FLORESTAL - ENFOQUE UNIDADE DE AREA
-# AUTORES: DALLA CORTE, ET AL. 2021
+# AUTORES: DALLA CORTE, ET AL. 2022
 # UNIVERSIDADE FEDERAL DO PARANA - UFPR
 # CURSO DE ENGENHARIA FLORESTAL
 ##################################################################################
@@ -11,8 +12,8 @@
 ##################################################################################
 
 ########## PREPARACAO DO AMBIENTE RSTUDIO ########## -------------------------------------------------------------------------------------
-#Indicando o diretÛrio
-setwd("C://Livro_Lidar/Item7_MRL/")
+#Indicando o diret√≥rio
+setwd("C:/Livro_Lidar/Item7_MRL/")
 
 # Instalando os pacotes necessarios e carregando os mesmos
 install.packages("dplyr")
@@ -99,9 +100,9 @@ plot(dados_modelagem$biomassa.kg., dados_modelagem$bio_est)
 
 
 ########################################################
-##################### ESTATÕSTICAS #####################
+##################### ESTAT√çSTICAS #####################
 ########################################################
-#DefiniÁ„o final dos modelos
+#Defini√ß√£o final dos modelos
 volume<- modelo_step_volume_p$model
 ab<- modelo_step_ab_p_both$model
 bio<- modelo_step_bio_p_both$model
@@ -174,7 +175,7 @@ faraway::vif(bio)
 
 {
   g1 <- ggplot(dados_modelagem, aes(x = ab_est, y = area_basal.BA.)) + 
-    labs(x = "¡rea Basal Estimada", y = "¡rea Basal Observada") +
+    labs(x = "√Årea Basal Estimada", y = "√Årea Basal Observada") +
     geom_point()+
     geom_abline(intercept = 0,slope = 1, linetype = "dashed")+
     geom_smooth(method=lm, se=FALSE, color = 'red', size = 0.8)+
@@ -249,7 +250,7 @@ plot(metrics)
 #gerando o stack com os arquivos raster das variaveis LiDAR
 stack<-stack(metrics)
 
-#buscando os modelos de regress„o
+#buscando os modelos de regress√£o
 volume<- modelo_step_volume_p$model
 ab<- modelo_step_ab_p_both$model
 bio<- modelo_step_bio_p_both$model
@@ -260,8 +261,6 @@ b<-predict(stack,ab)
 c<-predict(stack,bio)
 
 #espacializando a informacao calculada para a area de interesse
-plot(a, main = "EspacializaÁ„o - Volume")   
-plot(b, main = "EspacializaÁ„o - ¡rea Basal")
-plot(c, main = "EspacializaÁ„o - Biomassa") 
-
-
+plot(a, main = "Espacializa√ß√£o - Volume")   
+plot(b, main = "Espacializa√ß√£o - √Årea Basal")
+plot(c, main = "Espacializa√ß√£o - Biomassa") 
