@@ -13,7 +13,7 @@
 
 ########## PREPARACAO DO AMBIENTE RSTUDIO ########## -------------------------------------------------------------------------------------
 #Indicando o diretório
-setwd("C:/Livro_Lidar/Item7_MRL/")
+setwd("C:/Livro_Lidar/Item4_MRL/")
 
 # Instalando os pacotes necessarios e carregando os mesmos
 install.packages("dplyr")
@@ -33,7 +33,7 @@ require(ggplot2)
 
 
 # Abrindo o arquivo "dados_pareados"
-dados_modelagem<-read.csv2("Item_7_Tabelas/dados_pareados.csv",header = TRUE)
+dados_modelagem<-read.csv2("Item_4_Tabelas/dados_pareados.csv",header = TRUE)
 View(dados_modelagem)
 
 ##########################################################################
@@ -84,7 +84,7 @@ plot(dados_modelagem$area_basal.BA., dados_modelagem$ab_est)
 #separando as colunas x e y para executar a funcao step
 step_bio <- dados_modelagem%>%dplyr::select(c(8,9:26))
 View(step_bio)
-write.csv2(step_bio, "Item_7_Tabelas/step_bio.csv")
+write.csv2(step_bio, "Item_4_Tabelas/step_bio.csv")
 #aplicando a regressao e o step
 independentes_bio<-lm(biomassa.kg.~., data=step_bio)
 
@@ -232,11 +232,11 @@ require(lidR)
 require(raster)
 
 #importando a base de dados las e plotando
-dadosLAS_norm<-readLAS("Item_7_Dados_LiDAR/las_normalizada.las", select = "xyz",filter = " -drop_z_below 0")
+dadosLAS_norm<-readLAS("Item_4_Dados_LiDAR/las_normalizada.las", select = "xyz",filter = " -drop_z_below 0")
 plot(dadosLAS_norm, color = "Z", size = 3, bg = "white", legend = T)
 
 #importando o shapefile para recorte da area de interesse
-corte<-shapefile("Item_7_Shapefile/corte.shp")
+corte<-shapefile("Item_4_Shapefile/corte.shp")
 plot(corte)
 
 #recorte da area de interesse
