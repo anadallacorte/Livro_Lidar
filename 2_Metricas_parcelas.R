@@ -7,7 +7,7 @@
 # CURSO DE ENGENHARIA FLORESTAL
 ##################################################################################
 #Definindo do diretório
-setwd("C://Livro_Lidar/Item6_Metricas/")
+setwd("C:/Livro_Lidar/Item6_Metricas/")
 
 ##################################################################################
 ############### GERACAO DAS METRICAS PARA O INVENTARIO FLORESTAL #################
